@@ -1,13 +1,123 @@
-body {
+*,
+::before,
+::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #1f2937;
+  color: #f9fafb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.loading {
+  text-align: center;
+  padding: 2rem;
+}
+.search {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 4rem auto;
+}
+
+.search_form {
+  display: flex;
+  position: relative;
+}
+.input_form,
+.search_btn {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  padding: 0.75rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.input_form {
+  width: 100%;
+  border-bottom: 2px solid #fff;
+  outline: none;
+}
+
+.search_btn {
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.5rem;
+}
+
+/* article */
+.photo_ {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px rgb(255, 255, 255);
+}
+
+.photo_ > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo_center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+/* info */
+.photo_info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.555);
+  color: #fff;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.photo_:hover .photo_info {
+  transform: translateY(0);
+}
+
+.photo_info h4,
+.photo_info p {
+  font-weight: 400;
+}
+
+.photo_info h4 {
+  margin-bottom: 0.5rem;
+}
+.user_img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@media screen and (min-width: 567px) {
+  .search_form {
+    max-width: 379px;
+  }
+  .photo_center {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1rem;
+  }
 }
